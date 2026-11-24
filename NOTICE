@@ -1,0 +1,36 @@
+IDEV Instrument Kit
+Copyright (c) 2026 IDEV
+
+This kit is distributed under the MIT License (see LICENSE).
+
+It relies on the third-party components listed below. None of them is
+included in this repository; each is fetched or installed separately and
+remains under its own licence.
+
+--------------------------------------------------------------------
+LVGL 9.2.2  -- MIT License
+https://github.com/lvgl/lvgl
+Cloned separately at build time (see README). Its licence text comes with
+the LVGL sources. [Rémy : vérifier la ligne de copyright dans le fichier
+LICENCE.txt de LVGL 9.2.2 et la recopier ici telle quelle.]
+
+--------------------------------------------------------------------
+Qt 6.8.3 (Qt Quick and the Qt modules used by the QML part)
+-- GNU Lesser General Public License version 3 (LGPLv3)
+https://www.qt.io/licensing/  ·  https://doc.qt.io/qt-6/lgpl.html
+Qt is not included in this repository. The demos in qml/ use Qt only
+under the LGPLv3 (no GPL-only modules). The Qt version used for
+development (6.8.3) was built from the official sources.
+
+If you distribute an application or a binary demo built with this kit
+and linked with Qt, you must, under section 4 of the LGPLv3:
+  - state visibly that the application uses Qt and that Qt is under the LGPLv3;
+  - provide a copy of the LGPLv3 and of the GPLv3;
+  - link Qt dynamically (or give users what they need to relink the
+    application against a modified Qt);
+  - provide the corresponding Qt sources or a written offer for them.
+This notice is information, not legal advice.
+
+--------------------------------------------------------------------
+Not for real flight or vehicle use. The instruments are a prototyping
+kit and are not certified.
