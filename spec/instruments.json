@@ -1,0 +1,156 @@
+{
+  "format": "idev-instruments",
+  "formatVersion": "0.1",
+  "description": "Single source of truth for the IDEV instrument kit. Consumed by tools/gen_instruments.py, which emits the C configuration table used by both the LVGL widgets and the Qt Quick module.",
+  "palette": {
+    "normal": "#2ECC71",
+    "caution": "#F5A623",
+    "warning": "#E8443A",
+    "background": "#0B0F14",
+    "surface": "#161C24",
+    "surfaceRaised": "#202833",
+    "foreground": "#E8EDF2",
+    "dim": "#6B7785",
+    "needle": "#FF6A3D",
+    "sky": "#2E78C7",
+    "ground": "#7A4E26",
+    "symbol": "#FFD21F"
+  },
+  "defaults": {
+    "dampingMs": 120,
+    "decimals": 0,
+    "hysteresis": 0.0
+  },
+  "instruments": [
+    {
+      "id": "car.speed",
+      "kind": "RoundGauge",
+      "label": "SPEED",
+      "unit": "km/h",
+      "min": 0, "max": 260,
+      "dampingMs": 150,
+      "zones": [],
+      "alerts": { "cautionHigh": 130, "hysteresis": 3 },
+      "gauge": { "startAngle": -135, "sweepAngle": 270, "majorStep": 20, "minorDivisions": 4 }
+    },
+    {
+      "id": "car.rpm",
+      "kind": "RoundGauge",
+      "label": "RPM",
+      "unit": "rpm",
+      "min": 0, "max": 8000,
+      "dampingMs": 80,
+      "zones": [
+        { "from": 0,    "to": 6000, "severity": "normal" },
+        { "from": 6000, "to": 6500, "severity": "caution" },
+        { "from": 6500, "to": 8000, "severity": "warning" }
+      ],
+      "alerts": { "cautionHigh": 6000, "warningHigh": 6500, "hysteresis": 100 },
+      "gauge": { "startAngle": -135, "sweepAngle": 270, "majorStep": 1000, "minorDivisions": 5, "labelScale": 0.001, "scaleCaption": "x1000" }
+    },
+    {
+      "id": "car.coolant",
+      "kind": "RoundGauge",
+      "label": "TEMP",
+      "unit": "°C",
+      "min": 40, "max": 130,
+      "dampingMs": 400,
+      "zones": [
+        { "from": 40,  "to": 105, "severity": "normal" },
+        { "from": 105, "to": 115, "severity": "caution" },
+        { "from": 115, "to": 130, "severity": "warning" }
+      ],
+      "alerts": { "cautionHigh": 105, "warningHigh": 115, "hysteresis": 2 },
+      "gauge": { "startAngle": -120, "sweepAngle": 240, "majorStep": 30, "minorDivisions": 3 }
+    },
+    {
+      "id": "car.fuel",
+      "kind": "RoundGauge",
+      "label": "FUEL",
+      "unit": "%",
+      "min": 0, "max": 100,
+      "dampingMs": 1000,
+      "zones": [
+        { "from": 0,  "to": 10,  "severity": "warning" },
+        { "from": 10, "to": 20,  "severity": "caution" },
+        { "from": 20, "to": 100, "severity": "normal" }
+      ],
+      "alerts": { "cautionLow": 20, "warningLow": 10, "hysteresis": 1 },
+      "gauge": { "startAngle": -120, "sweepAngle": 240, "majorStep": 25, "minorDivisions": 1 }
+    },
+    {
+      "id": "car.oilPressure",
+      "kind": "Value",
+      "label": "OIL",
+      "unit": "bar",
+      "min": 0, "max": 7,
+      "decimals": 1,
+      "dampingMs": 200,
+      "zones": [
+        { "from": 0,   "to": 0.8, "severity": "warning" },
+        { "from": 0.8, "to": 1.2, "severity": "caution" },
+        { "from": 1.2, "to": 7,   "severity": "normal" }
+      ],
+      "alerts": { "cautionLow": 1.2, "warningLow": 0.8, "hysteresis": 0.1 }
+    },
+    { "id": "car.ann.oil",     "kind": "Annunciator", "label": "OIL",   "annunciator": { "blinkHz": 2.0 } },
+    { "id": "car.ann.temp",    "kind": "Annunciator", "label": "TEMP",  "annunciator": { "blinkHz": 2.0 } },
+    { "id": "car.ann.fuel",    "kind": "Annunciator", "label": "FUEL",  "annunciator": { "blinkHz": 2.0 } },
+    { "id": "car.ann.brake",   "kind": "Annunciator", "label": "BRAKE", "annunciator": { "blinkHz": 2.0 } },
+    { "id": "car.ann.speed",   "kind": "Annunciator", "label": "LIMIT", "annunciator": { "blinkHz": 2.0 } },
+
+    {
+      "id": "pfd.airspeed",
+      "kind": "LinearTape",
+      "label": "IAS",
+      "unit": "kt",
+      "min": 30, "max": 400,
+      "dampingMs": 150,
+      "zones": [
+        { "from": 30,  "to": 60,  "severity": "warning" },
+        { "from": 60,  "to": 70,  "severity": "caution" },
+        { "from": 70,  "to": 250, "severity": "normal" },
+        { "from": 250, "to": 280, "severity": "caution" },
+        { "from": 280, "to": 400, "severity": "warning" }
+      ],
+      "alerts": { "warningLow": 60, "cautionLow": 70, "cautionHigh": 250, "warningHigh": 280, "hysteresis": 2 },
+      "tape": { "visibleRange": 80, "majorStep": 10, "minorDivisions": 2, "labelStep": 20 }
+    },
+    {
+      "id": "pfd.altitude",
+      "kind": "LinearTape",
+      "label": "ALT",
+      "unit": "ft",
+      "min": -1000, "max": 45000,
+      "dampingMs": 150,
+      "zones": [],
+      "alerts": {},
+      "tape": { "visibleRange": 800, "majorStep": 100, "minorDivisions": 5, "labelStep": 200 }
+    },
+    {
+      "id": "pfd.roll",
+      "kind": "AttitudeAxis",
+      "label": "ROLL",
+      "unit": "°",
+      "min": -180, "max": 180,
+      "dampingMs": 60,
+      "zones": [],
+      "alerts": { "cautionLow": -35, "warningLow": -45, "cautionHigh": 35, "warningHigh": 45, "hysteresis": 2 }
+    },
+    {
+      "id": "pfd.pitch",
+      "kind": "AttitudeAxis",
+      "label": "PITCH",
+      "unit": "°",
+      "min": -90, "max": 90,
+      "dampingMs": 60,
+      "zones": [],
+      "alerts": { "cautionLow": -15, "warningLow": -20, "cautionHigh": 20, "warningHigh": 25, "hysteresis": 1 },
+      "attitude": { "pitchVisibleRange": 50, "ladderStep": 5 }
+    },
+    { "id": "pfd.ann.stall",     "kind": "Annunciator", "label": "STALL",     "annunciator": { "blinkHz": 2.0 } },
+    { "id": "pfd.ann.bank",      "kind": "Annunciator", "label": "BANK",      "annunciator": { "blinkHz": 2.0 } },
+    { "id": "pfd.ann.overspeed", "kind": "Annunciator", "label": "OVERSPEED", "annunciator": { "blinkHz": 2.0 } },
+    { "id": "pfd.ann.ap",        "kind": "Annunciator", "label": "AP",        "annunciator": { "blinkHz": 2.0 } }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "format": "idev-instruments",
+  "palette": {
+    "normal": "#00FF00",
+    "caution": "#FFAA00",
+    "warning": "#FF0000",
+    "background": "#000000",
+    "surface": "#111111",
+    "surfaceRaised": "#222222",
+    "foreground": "#FFFFFF",
+    "dim": "#777777",
+    "needle": "#FF6600",
+    "sky": "#0000FF",
+    "ground": "#884400",
+    "symbol": "#FFFF00"
+  },
+  "instruments": [
+    {
+      "id": "bad.rpm",
+      "kind": "RoundGauge",
+      "label": "RPM",
+      "unit": "rpm",
+      "min": 0,
+      "max": 8000,
+      "zones": [],
+      "gauge": {
+        "startAngle": -135,
+        "sweepAngle": 270,
+        "majorStep": 1000,
+        "minorDivisions": 5
+      }
+    },
+    {
+      "id": "bad.rpm",
+      "kind": "RoundGauge",
+      "label": "RPM",
+      "unit": "rpm",
+      "min": 0,
+      "max": 8000,
+      "zones": [],
+      "gauge": {
+        "startAngle": -135,
+        "sweepAngle": 270,
+        "majorStep": 1000,
+        "minorDivisions": 5
+      }
+    }
+  ]
+}

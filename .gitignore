@@ -1,0 +1,5 @@
+/build/
+/third_party/lvgl/
+CMakeUserPresets.json
+*.user
+__pycache__/
