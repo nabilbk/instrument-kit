@@ -28,7 +28,7 @@
     },
     {
       "name": "qt",
-      "displayName": "Qt Quick module + demos (Qt 6.10, MSVC 2022)",
+      "displayName": "Qt Quick module + demos (Qt 6.8+)",
       "generator": "Ninja Multi-Config",
       "binaryDir": "${sourceDir}/build/qt",
       "cacheVariables": {
@@ -36,12 +36,6 @@
         "CMAKE_PREFIX_PATH": "$env{QT_PATH}",
         "IDEV_BUILD_LVGL": "OFF",
         "IDEV_BUILD_QT": "ON"
-      },
-      "environment": {
-        "PATH": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64;C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.28000.0\\x64;C:\\Program Files (x86)\\Windows Kits\\10\\bin\\x64;$penv{PATH}",
-        "INCLUDE": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.40.33807\\include;C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.40.33807\\ATLMFC\\include;C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Auxiliary\\VS\\include;C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.28000.0\\ucrt;C:\\Program Files (x86)\\Windows Kits\\10\\\\include\\10.0.28000.0\\\\um;C:\\Program Files (x86)\\Windows Kits\\10\\\\include\\10.0.28000.0\\\\shared;C:\\Program Files (x86)\\Windows Kits\\10\\\\include\\10.0.28000.0\\\\winrt;C:\\Program Files (x86)\\Windows Kits\\10\\\\include\\10.0.28000.0\\\\cppwinrt;C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\include\\um",
-        "LIB": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.40.33807\\ATLMFC\\lib\\x64;C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.40.33807\\lib\\x64;C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\lib\\um\\x64;C:\\Program Files (x86)\\Windows Kits\\10\\lib\\10.0.28000.0\\ucrt\\x64;C:\\Program Files (x86)\\Windows Kits\\10\\\\lib\\10.0.28000.0\\\\um\\x64",
-        "LIBPATH": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.40.33807\\ATLMFC\\lib\\x64;C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.40.33807\\lib\\x64;C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.40.33807\\lib\\x86\\store\\references;C:\\Program Files (x86)\\Windows Kits\\10\\UnionMetadata\\10.0.28000.0;C:\\Program Files (x86)\\Windows Kits\\10\\References\\10.0.28000.0;C:\\WINDOWS\\Microsoft.NET\\Framework64\\v4.0.30319"
       }
     }
   ],
